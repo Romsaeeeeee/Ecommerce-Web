@@ -4,4 +4,24 @@
 @theme {
   --font-lato: "Lato", sans-serif;
   --font-josefin: "Josefin Sans", sans-serif;
+  --animate-fadeIn: fadeIn 0.8s ease-in forwards;
+  --animate-fadeOut: fadeOut 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
