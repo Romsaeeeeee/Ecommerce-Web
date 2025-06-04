@@ -4,14 +4,80 @@ import yellowChair from "../assets/yellow-chair.png"
 import sideBoard from "../assets/wooden-sideboard.png"
 import comfort from "../assets/comfort-chair.png"
 import pink from "../assets/pink-sofa.png"
+import { useState } from "react";
 
 export default function Home() {
+    const [arrival, setArrival] = useState(true);
+    const [best, setBest] = useState(false);
+    const [feat, setFeat] = useState(false);
+    const [special, setSpecial] = useState(false);
+
+    const newArrival = () => {
+        setArrival(true);
+        setBest(false);
+        setFeat(false);
+        setSpecial(false);
+    }
+    const bestSeller = () => {
+        setArrival(false);
+        setBest(true);
+        setFeat(false);
+        setSpecial(false);
+    }
+    const featuredProd = () => {
+        setArrival(false);
+        setBest(false);
+        setFeat(true);
+        setSpecial(false);
+    }
+    const specialOffer = () => {
+        setArrival(false);
+        setBest(false);
+        setFeat(false);
+        setSpecial(true);
+    }
+
+    const newProd = [
+        { chair: "", name: "", price: "" },
+        { chair: "", name: "", price: "" },
+        { chair: "", name: "", price: "" },
+        { chair: "", name: "", price: "" },
+        { chair: "", name: "", price: "" },
+        { chair: "", name: "", price: "" },
+    ]
+
+    const bestProd = [
+        { chair: "", name: "", price: "" },
+        { chair: "", name: "", price: "" },
+        { chair: "", name: "", price: "" },
+        { chair: "", name: "", price: "" },
+        { chair: "", name: "", price: "" },
+        { chair: "", name: "", price: "" },
+    ]
+
+    const featProd = [
+        { chair: "", name: "", price: "" },
+        { chair: "", name: "", price: "" },
+        { chair: "", name: "", price: "" },
+        { chair: "", name: "", price: "" },
+        { chair: "", name: "", price: "" },
+        { chair: "", name: "", price: "" },
+    ]
+
+    const specialProd = [
+        { chair: "", name: "", price: "" },
+        { chair: "", name: "", price: "" },
+        { chair: "", name: "", price: "" },
+        { chair: "", name: "", price: "" },
+        { chair: "", name: "", price: "" },
+        { chair: "", name: "", price: "" },
+    ]
 
     const categories = [
-        { category: "New Arrival" },
-        { category: "Best Seller" },
-        { category: "Featured" },
-        { category: "Special Offer" },
+        { category: "New Arrival", click: newArrival },
+        { category: "Best Seller", click: bestSeller },
+        { category: "Featured", click: featuredProd },
+        { category: "Special Offer", click: specialOffer },
     ]
 
     const featured = [
@@ -44,7 +110,7 @@ export default function Home() {
             </div >
             <div className="w-full h-1/2 flex flex-col justify-center items-center gap-5">
                 <p className="text-[#1A0B5B] font-bold text-4xl">Featured Products</p>
-                <div className="w-full h-full flex flex-wrap justify-center gap-12">
+                <div className={`w-full h-full flex flex-wrap justify-center gap-12`}>
                     {featured && featured.map((item, index) => (
                         <div key={index} className="w-fit h-fit">
                             <ProductBox
@@ -60,22 +126,55 @@ export default function Home() {
                 <p className="text-[#1A0B5B] font-bold text-4xl">Latest Products</p>
                 <div className="w-full h-fit flex justify-center items-center gap-30">
                     {categories && categories.map((item, index) => (
-                        <div key={index} className="w-fit h-fit">
-                            <p className="text-[18px] font-lato text-[#151875]">{item?.category}</p>
-                        </div>
+                        <button key={index} onClick={item?.click} className={`w-fit h-fit cursor-pointer text-[18px] font-lato text-[#151875] hover:text-[#FB2E86] transition-all duration-700
+                        ${arrival && item.category === "New Arrival" ? "text-[#FB2E86]" : ""}
+                        ${best && item.category === "Best Seller" ? "text-[#FB2E86]" : ""}
+                        ${feat && item.category === "Featured" ? "text-[#FB2E86]" : ""}
+                        ${special && item.category === "Special Offer" ? "text-[#FB2E86]" : ""}
+                        `}>
+                            {item?.category}
+                        </button>
                     ))}
                 </div>
-                <div className="w-full h-full flex flex-wrap justify-center gap-12">
-                    {featured && featured.map((item, index) => (
-                        <div key={index} className="w-fit h-fit">
+                <div className="w-fit h-full grid grid-cols-3 gap-5 place-items-center">
+                    {arrival &&
+                        newProd.map((item, index) => (
                             <ProductBox
+                                key={index}
                                 image={item?.chair}
                                 name={item?.name}
                                 price={item?.price}
                             />
-                        </div>
-                    ))}
+                        ))}
+                    {best &&
+                        bestProd.map((item, index) => (
+                            <ProductBox
+                                key={index}
+                                image={item?.chair}
+                                name={item?.name}
+                                price={item?.price}
+                            />
+                        ))}
+                    {feat &&
+                        featProd.map((item, index) => (
+                            <ProductBox
+                                key={index}
+                                image={item?.chair}
+                                name={item?.name}
+                                price={item?.price}
+                            />
+                        ))}
+                    {special &&
+                        specialProd.map((item, index) => (
+                            <ProductBox
+                                key={index}
+                                image={item?.chair}
+                                name={item?.name}
+                                price={item?.price}
+                            />
+                        ))}
                 </div>
+
             </div>
         </div >
     );
