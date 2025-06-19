@@ -4,6 +4,12 @@ import yellowChair from "../assets/yellow-chair.png"
 import sideBoard from "../assets/wooden-sideboard.png"
 import comfort from "../assets/comfort-chair.png"
 import pink from "../assets/pink-sofa.png"
+import newprod1 from "../assets/1.png"
+import newprod2 from "../assets/2.png"
+import newprod3 from "../assets/3.png"
+import newprod4 from "../assets/4.png"
+import newprod5 from "../assets/5.png"
+import newprod6 from "../assets/6.png"
 import { useState } from "react";
 
 export default function Home() {
@@ -38,39 +44,39 @@ export default function Home() {
     }
 
     const newProd = [
-        { chair: "", name: "", price: "" },
-        { chair: "", name: "", price: "" },
-        { chair: "", name: "", price: "" },
-        { chair: "", name: "", price: "" },
-        { chair: "", name: "", price: "" },
-        { chair: "", name: "", price: "" },
+        { chair: newprod1, name: "Wingback Chair", price: "$320.00" },
+        { chair: newprod2, name: "Low Sofa", price: "$780.00" },
+        { chair: newprod3, name: "2-Seater Sofa", price: "$650.00" },
+        { chair: newprod4, name: "Velvet Dining Chair", price: "$150.00" },
+        { chair: newprod5, name: "Armchair w/ Lamp", price: "$520.00" },
+        { chair: newprod6, name: "Accent Chair", price: "$400.00" },
     ]
 
     const bestProd = [
-        { chair: "", name: "", price: "" },
-        { chair: "", name: "", price: "" },
-        { chair: "", name: "", price: "" },
-        { chair: "", name: "", price: "" },
-        { chair: "", name: "", price: "" },
-        { chair: "", name: "", price: "" },
+        { chair: newprod3, name: "Wingback Chair", price: "$320.00" },
+        { chair: newprod2, name: "Low Sofa", price: "$780.00" },
+        { chair: newprod4, name: "2-Seater Sofa", price: "$650.00" },
+        { chair: newprod1, name: "Velvet Dining Chair", price: "$150.00" },
+        { chair: newprod6, name: "Armchair w/ Lamp", price: "$520.00" },
+        { chair: newprod5, name: "Accent Chair", price: "$400.00" },
     ]
 
     const featProd = [
-        { chair: "", name: "", price: "" },
-        { chair: "", name: "", price: "" },
-        { chair: "", name: "", price: "" },
-        { chair: "", name: "", price: "" },
-        { chair: "", name: "", price: "" },
-        { chair: "", name: "", price: "" },
+        { chair: newprod2, name: "Wingback Chair", price: "$320.00" },
+        { chair: newprod4, name: "Low Sofa", price: "$780.00" },
+        { chair: newprod3, name: "2-Seater Sofa", price: "$650.00" },
+        { chair: newprod1, name: "Velvet Dining Chair", price: "$150.00" },
+        { chair: newprod6, name: "Armchair w/ Lamp", price: "$520.00" },
+        { chair: newprod5, name: "Accent Chair", price: "$400.00" },
     ]
 
     const specialProd = [
-        { chair: "", name: "", price: "" },
-        { chair: "", name: "", price: "" },
-        { chair: "", name: "", price: "" },
-        { chair: "", name: "", price: "" },
-        { chair: "", name: "", price: "" },
-        { chair: "", name: "", price: "" },
+        { chair: newprod6, name: "Wingback Chair", price: "$320.00" },
+        { chair: newprod5, name: "Low Sofa", price: "$780.00" },
+        { chair: newprod4, name: "2-Seater Sofa", price: "$650.00" },
+        { chair: newprod3, name: "Velvet Dining Chair", price: "$150.00" },
+        { chair: newprod2, name: "Armchair w/ Lamp", price: "$520.00" },
+        { chair: newprod1, name: "Accent Chair", price: "$400.00" },
     ]
 
     const categories = [
@@ -136,7 +142,7 @@ export default function Home() {
                         </button>
                     ))}
                 </div>
-                <div className="w-fit h-full grid grid-cols-3 gap-5 place-items-center">
+                <div className="w-fit h-full grid grid-cols-3 gap-5 place-items-center ">
                     {arrival &&
                         newProd.map((item, index) => (
                             <ProductBox
