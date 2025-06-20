@@ -7,7 +7,7 @@ function App() {
       <div className="w-full ">
         <Topbar />
       </div>
-      <div className="w-full pb-5">
+      <div className="w-full">
         <Home />
       </div>
     </div>

@@ -11,6 +11,7 @@ import newprod4 from "../assets/4.png"
 import newprod5 from "../assets/5.png"
 import newprod6 from "../assets/6.png"
 import { useState } from "react";
+import Footer from "../components/Footer";
 
 export default function Home() {
     const [arrival, setArrival] = useState(true);
@@ -181,6 +182,9 @@ export default function Home() {
                         ))}
                 </div>
 
+            </div>
+            <div className="w-full h-fit">
+                <Footer />
             </div>
         </div >
     );
